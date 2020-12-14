@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+          <title style="">AL-Sadaqa</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="icon" href="images/s4.png" type = "image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+        <style>
+             body{
+                font-family:Verdana, sans-serif;
+            }
+             html, body {
+                font-size: 14px;
+                background-color: #f2f2f2;
+
+            }
+            #fwt-masthead {
+                height: auto;
+            }
+            #pageintro a{
+                 background: #333;
+                 border: none;
+                 border-radius: 100%;
+            }
+             #pageintro a:hover{
+                 background: #6bf8d8;
+                 border: none;
+                 border-radius: 100%;
+            }
+
+            article footer a{
+                cursor: pointer
+            }
+            a{
+                text-decoration: none;
+            }
+            a:hover,
+            a:focus{  text-decoration: none;}
+             .btmspace-30{
+                margin-bottom:10px;
+            }
+           
+/*            .group li article footer a{border-radius:10px;}*/
+             .btmspace-30{
+            margin-bottom:10px;
+        }
+        .card-columns {
+          @include media-breakpoint-only(lg) {
+            column-count: 4;
+          }
+          @include media-breakpoint-only(xl) {
+            column-count: 5;
+          }
+        }
+        .row{
+            margin-bottom:30px;
+        }
+        .card{
+            box-shadow: 5px 0px 14px 0px rgba(0,0,0,0.25); 
+            padding: 15px;
+        }
+        .zoomimg{
+            -webkit-transition: all .3s ease; /* Safari and Chrome */
+            -moz-transition: all .3s ease; /* Firefox */
+            -o-transition: all .3s ease; /* IE 9 */
+            -ms-transition: all .3s ease; /* Opera */
+            transition: all .3s ease;
+            overflow:hidden;
+        }
+
+         .zoomimg:hover {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform:translateZ(0) scale(1.1); /* Safari and Chrome */
+            -moz-transform:scale(1.1); /* Firefox */
+            -ms-transform:scale(1.1); /* IE 9 */
+            -o-transform:translatZ(0) scale(1.1); /* Opera */
+            transform:translatZ(0) scale(1.1);
+        }
+        .imagescale{
+            border:1px solid orange;
+            transition: all .3s ease;
+            overflow:hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform:translateZ(0) scale(1.20); /* Safari and Chrome */
+            -moz-transform:scale(1.10); /* Firefox */
+            -ms-transform:scale(1.10); /* IE 9 */
+            -o-transform:translatZ(0) scale(1.10); /* Opera */
+            transform:translatZ(0) scale(1.10);  
+        }
+        .card img{
+            padding:5px;
+        }
+        .card-body h5{
+            font-weight: 600;
+        }
+            .card-body h6{
+            font-weight: 600;
+                font-size:16px;
+        }
+           
+        .card-body h5{
+            color: orange;
+            transition: all .5s ease;
+        }
+            .card-body h6{
+            color: orange;
+            transition: all .5s ease;
+            margin:20px auto 0;    
+        }
+        .card-text:hover{
+            color: orange;
+            transition: all .3s ease;
+    }
+        .card-deck{width:100%;}
+        .container {
+            padding: 10px 0px 5px 0px;
+        }
+            .card-body{
+                padding:1.25rem 0;
+                
+            }
+            .card-body p{
+              margin-top: 10px;
+            }
+            #mawap{
+                padding: 0;
+                margin:0;
+            }      
+            .card-body:not(#mawap){margin-top: 10px;}
+           
+            .row0 a:hover{color:orange}
+.heads{
+    border-radius: 6px 37px;
+    width: auto;
+    box-shadow: 5px 0px 14px 0px rgba(255, 192, 137, 0.25);
+    padding: 14px;
+    position: relative;
+    display: block;
+    min-width: 0;
+    max-width: auto;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+}
+    .heads {border:none}
+   
+    @media screen and (max-width:600px){
+
+    .zoomimg:hover {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform:translateZ(0) scale(1); /* Safari and Chrome */
+    -moz-transform:scale(1); /* Firefox */
+    -ms-transform:scale(1); /* IE 9 */
+    -o-transform:translatZ(0) scale(1); /* Opera */
+    transform:translatZ(0) scale(1);
+}
+.imagescale{
+    border:1px solid orange;
+    transition: all .3s ease;
+    overflow:hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform:translateZ(0) scale(1); /* Safari and Chrome */
+    -moz-transform:scale(1); /* Firefox */
+    -ms-transform:scale(1); /* IE 9 */
+    -o-transform:translatZ(0) scale(1); /* Opera */
+    transform:translatZ(0) scale(1);  
+}
+}
+        </style>  
+    </head>
+    <body id="top" style="font-family: Verdana,Arial,sans-serif;">
+    <div id="fwt-masthead" class='handel-container'>
+ <div class="header-part wrapper row0">
+        
+        <div class="wrapper row0" style="height:51px;">
+                  <div id="topbar" class="hoc clear"> 
+                    <div class="fl_left">
+                      <ul class="nospace">
+                        <li><i class="fa fa-phone"></i> +966-12-676-0020</li>
+                        <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@alsadaqa.com.sa">info@alsadaqa.com.sa</a></li>
+                      </ul>
+                    </div>
+
+                   
+
+
+                      <!--Redirection-->
+
+                    <div class="fl_right redirection-arabic">
+                      <ul class="nospace" style='direction:rtl;font-size: 14px;'>
+                        <li><a href='AL-Sadaqa-arabic/service.html'>عربي</a></li>
+                      </ul>
+                    </div>
+            </div></div>
+                </div>
+
+ <div class="wrapper row1 ex-row1 navs" style="background-image: url('images/o120.jpg');background-position: center;background-clip: border-box;width:100%">
+     <div style='background-color:#dddddd3b;color:#000;'>
+
+     <header id="header" class="hoc clear"> 
+
+                    <nav id="mainav" class="fl_left">
+                      <ul class="clear">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a class="drop" href="main-core.html">Core Solutions</a>
+                          <ul>
+                            <li><a href="core.html#Structured">Structured Cabling Solutions</a></li> 
+                            <li><a href="core.html#network">Network Solution</a></li>
+                            <li><a href="core.html#L">Low Current And Electromechanical Solution</a></li>
+
+
+                            <li><a href="core.html#Enterprise">Enterprise Technology Solutions</a></li>
+                            <li><a href="core.html#data">Data Center Solutions</a></li>
+                            <li><a href="core.html#Business">Business Applications &amp; Software</a></li>
+
+                          </ul>
+                        </li>
+                        <li class='active'><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="bussiness-partiners.html">Business Partners</a></li>
+            <li><a href="Contactus.php">Contact us</a></li>
+                      </ul>
+                    </nav>
+                   <div id="logo" class="fl_right">
+                        <a href="index.html">
+                            <img src='images/kk.png'></a>
+                    </div>
+                  </header>
+                  </div>
+        </div>
+        <div id="back-to-top"><a href='#top'><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></a></div>
+    
+            <div class="w3-content w3-display-container" style="padding:0;">
+            <div class="w3-display-container">
+                <div class="row w3-display-container" style="margin: 30px 0">
+                    <img src="images/page-header/our-service.png" style="width:100%;border-radius:10px;" alt="image-service">
+                </div>
+             
+                 <div class='w3-container'>
+                 <div class="w3-container " style="margin-bottom:0">
+                <div class="row" style="padding-left:0px">
+                    <h3 class='heads' style="color: #fff;text-align: left;background-color:orange;"><span style="padding:5px;">services</span></h3>
+                </div>
+            </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="card-deck">
+                          <div id="card1" class="card  card1 " style='height: 200px;'>
+                              <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                               <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard1" src="images/service/algorithm.png" alt="Card image cap" style="width:64px; height:64px;">
+                              </div>
+                           
+                            <div class="card-body">
+                              <h6 class="card-title text-center show1" >Systems Integration</h6>
+                                
+                            <div id="c1" style = "display:none;">    
+                                <p class="card-text">Systems integration boosts efficiency and increased delivery value for clients and their customers.</p>
+                                 <p class="card-text"> Using a single IP-based network radically planning, installation and operation of all services needed to run a modern development.</p>
+                                <p class="card-text">A unified system entails that clients are no longer reliant on different contractors with different schedules.</p>
+                               
+                            </div>
+
+                            </div>
+                          </div>
+                        
+                          <div id="card2" class="card card2 ">
+                              <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                               <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard2" src="images/service/consultation.png" alt="consultation" style="width:64px; height:64px;">
+                              </div>
+                           
+                         <div class="card-body">
+                              <h6 class="card-title text-center show1" >Consultation</h6>
+                                
+                            <div id="c2" style = "display:none;">    
+                                <p class="card-text">AL SADAQA offers consultation and feasibility studies for mega projects that based on integrated solutions.</p>
+                            </div>
+
+                            </div>
+                          </div>
+                        <div id="card3" class="card card3 ">
+                              <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                               <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard3" src="images/service/prototype.png" alt="prototype" style="width:64px; height:64px;">
+                              </div>
+                           
+                            <div class="card-body">
+                              <h6 class="card-title text-center">Design &amp; Engineering</h6>
+
+                            <div id="c3" style = "display:none;">    
+                              <p class="card-text">AL SADAQA provides design service through specialized engineers, designers, and draftsmen who are highly trained and skilled with perfect experience and supported by Technology partners.</p>
+                              <p class="card-text">AL SADAQA is geared towards handling projects, and is equipped to meet all type of challenges in terms of tight timeframe, state-of-the-art systems, and other factors within allocated budget.</p>
+                            </div>
+                    
+
+                            </div>
+                          </div>
+                         <div id="card7" class="card card7">
+                            
+                          <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                           <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard7" src="images/service/design-process.png" alt="service" style="width:64px; height:64px;">
+                          </div>
+                           
+                            <div class="card-body">
+
+                                <h6 class="card-title text-center">Pre-Staging</h6>
+
+                                <div id="c7" style = "display:none;">  
+
+                                    <p class="card-text">Pre-staging is one of the key factors in AL SADAQA’s project cycle, the pre-staging cuts down engineering cost especially for remote sites, and speeds up project delivery.</p>
+                                    
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                      <div class="row">
+                    <div class="card-deck">
+                          <div id="card4" class="card card4">
+                              <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                               <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard4" src="images/service/execution.png" alt="execution" style="width:64px; height:64px;">
+                              </div>
+                           
+                            <div class="card-body">
+                              <h6 class="card-title text-center">Projects execution</h6>
+
+                            <div id="c4" style = "display:none;">    
+                              <p class="card-text">Projects execution services are important elements for systems integrators.</p>
+                              <p class="card-text"> AL SADAQA has the highly skilled and trained engineers who are empowered with tremendous experiences, which insure achieving the project and client’s objectives. </p>
+                            </div>
+                            </div>
+                          </div>
+                             <div id="card8" class="card card8">
+                            
+                      <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                           <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard8" src="images/service/delivery.png" alt="delivery" style="width:64px; height:64px;">
+                          </div>
+                           
+                            <div class="card-body">
+
+                                <h6 class="card-title text-center">Delivery</h6>
+
+                                <div id="c8" style = "display:none;">  
+
+                                    <p class="card-text">Being AL SADAQA having its own transportation fleet, empower it with more control to manage the delivery process.</p>
+                                    
+                                </div>
+                            </div>
+                          </div>
+                          
+                        
+                        <div id="card6" class="card card6">
+                              <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                               <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard6" src="images/service/analytics.png" alt="analytics" style="width:64px; height:64px;">
+                              </div>
+                           
+                            <div class="card-body">
+                              <h6 class="card-title text-center">Project Management</h6>
+
+                            <div id="c6" style = "display:none;">    
+                                <p class="card-text">We are always looking for a way to stay ahead of the pack in our field, companies are turning to project management to consistently deliver business results.</p>
+
+
+                                <p class="card-text">Implementing project management across AL SADAQA helps create a strategic value chain that gives companies an edge on their competitors, particularly in high-risk sectors and markets.</p>
+
+                                <p class="card-text"> Being able to deliver projects on time and within budget often determines whether a company will get the next job or whether its new product hits the market.</p>
+                            </div>
+                            </div>
+                          </div>
+                          <div id="card5" class="card card5">
+                              <div class="img-div rounded-circle card-img-top d-flex justify-content-between">
+                               <img class="img-thumbnail mx-auto shadow-sm bg-white rounde imgcard5" src="images/service/wrench.png" alt="wrench" style="width:64px; height:64px;">
+                              </div>
+                           
+                            <div class="card-body">
+                              <h6 id='mawap' class="card-title text-center">Maintenancea and Warranty and professional Services</h6>
+
+                            <div id="c5" style = "display:none;">    
+                                <p class="card-text">AL SADAQA understand the After Sales potential that give it competitive advantage.</p>
+
+                                <p class="card-text">Customers expect a high-quality customer service, especially as they focus on getting good value for their money, as well as, they are willing to spend more with those that deliver the best. </p>
+
+                                <p class="card-text">They focus on getting good value for their money, as well as, they are willing to spend more with those that deliver the best.</p>
+                                <p class="card-text">Management is crucial for a wide assortment of service and it can have a direct impact customer perceive brands.</p>
+                                <p class="card-text"> Warranties provide assurance against defective products that fails to perform satisfactorily over the warranty period.</p>
+                                <p class="card-text"> This assurance reduces risks associated with purchase of the product.</p>
+                                <p class="card-text"> AL SADAQA is a proud to offers a comprehensive warranty and maintenance management services that tackles of these issues and ensures a smooth supply chain. </p>
+                            </div>
+                            </div>
+                          </div>
+                      
+                        </div>
+                  </div>
+                    
+            </div>
+            </div>
+            </div>
+            </div>
+                <!-- Start footer -->
+
+                <div id='mobile-footer' class="wrapper row4">
+      <footer id="footer" class="hoc clear"> 
+
+        <div class="contact-us" style="line-height:1.9">
+        <h5 class="heading" style="color:#fff;margin-top:5px;margin-bottom:10px;">contact us</h5>
+        <p>Al-Sadaqa Information Solutions trading Head Office</p>
+
+          <ul class="nospace btmspace-30 linklist contact">
+            <li>
+             
+                 Address : Kingdom of Saudi Arabia, Jeddah, King Mohammad Abdulaziz street &amp; P.O Box: 5846 - Jeddah 21432
+              
+            </li>
+            <li><b>Email :</b> <a href="mailto:info@alsadaqa.com.sa">info@alsadaqa.com.sa</a></li>
+            <li><b>Sales :</b> <a href="mailto:Sales-info@alsadaqa.com.sa">Sales-info@alsadaqa.com.sa</a></li>
+            <li><b>Tel :</b> +966-12-676-0020</li>
+            <li><b>Fax :</b> +966-12-674-3019</li>  
+          </ul>
+
+        </div>
+
+
+        <div class="one_third first" style="padding:0;">
+            <h6 style="font-size:16px;margin-top:0;">social media</h6>
+           <ul class="faico clear">
+            <li><a class="faicon-facebook" href="https://www.facebook.com/alsaddaqa/" target="_blank" style="color:#fff;"> <i class="fa fa-facebook "></i></a></li>
+            <li><a class="faicon-twitter" href="https://twitter.com/alsaddaqa?s=09" target="_blank" style="color:#fff;"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="faicon-google-plus" href="https://www.youtube.com/channel/UCx8nftmTKCyqGB-xlyG6iDQ/about" target="_blank" style="color:#fff;"><i class="fa fa-youtube"></i></a></li>
+            <li><a class="faicon-google-plus" href="https://www.instagram.com/alsaddaqainformation/" target="_blank" style="color:#fff;"><i class="fa fa-instagram"></i></a></li>
+            <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/al-saddaqa-solutions-9b01671b3" target="_blank" style="color:#fff;"><i class="fa fa-linkedin"></i></a></li>
+
+          </ul>
+        </div>
+      </footer>
+          <div class="wrapper" style="width:100%">
+          <div id="copyright" class="hoc clear" style="color:#fff"> 
+            <div style="text-align:center; margin-left:auto; margin-right:auto;padding-top:10px;">
+                <p class="" >Copyright &copy; 2020 Al-sadaqa | Powered by Al-sadaqa</p>
+              </div>
+          </div>
+
+            <div class="clears"></div>
+            <div class="footbg">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id='disktop-footer' class="wrapper row4">
+      <footer id="footer" class="hoc clear"> 
+
+
+    <div class="footer-content" style="line-height:1.9;">
+        <h5 class="heading" style="color:#fff;margin-top:5px;margin-bottom:10px;">contact us</h5>
+        <p>Al-Sadaqa Information Solutions trading Head Office</p>
+
+    </div>
+
+
+
+          <div class="footer-content" style="line-height:1.9">
+            <div class="footer-partone">
+                  <ul class="nospace btmspace-30 linklist contact">
+                    <li>
+                      <p style="text-align: left;">
+                         Address : <span style="font-size: 13px;"> Saudi Arabia, Jeddah, King Mohammad Abdulaziz street &amp; P.O Box: 5846 - Jeddah 21432</span>
+                      </p>
+                    </li>
+                    <li><b>Fax :</b>   +966-12-674-3019</li>  
+
+                  </ul>
+
+              </div>
+
+
+              <div class="footer-partone">
+                  <ul class="nospace btmspace-30 linklist contact">
+                    <li><b>Email :</b> <a href="mailto:info@alsadaqa.com.sa">info@alsadaqa.com.sa</a></li>
+                    <li><b>Sales :</b> <a href="mailto:Sales-info@alsadaqa.com.sa">Sales-info@alsadaqa.com.sa</a></li>
+                    <li style="margin-top: 3px;"><b>Tel :</b> +966-12-676-0020</li>
+                  </ul>
+
+              </div>
+
+               <div class="footer-partone">
+                   <h6 style="font-size:16px;margin-top:0;">social media</h6>
+                   <ul class="faico clear">
+                    <li><a class="faicon-facebook" href="https://www.facebook.com/alsaddaqa/" target="_blank" style="color:#fff;"> <i class="fa fa-facebook "></i></a></li>
+                    <li><a class="faicon-twitter" href="https://twitter.com/alsaddaqa?s=09" target="_blank" style="color:#fff;"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="faicon-google-plus" href="https://www.youtube.com/channel/UCx8nftmTKCyqGB-xlyG6iDQ/about" target="_blank" style="color:#fff;"><i class="fa fa-youtube"></i></a></li>
+                    <li><a class="faicon-google-plus" href="https://www.instagram.com/alsaddaqainformation/" target="_blank" style="color:#fff;"><i class="fa fa-instagram"></i></a></li>
+                    <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/al-saddaqa-solutions-9b01671b3" target="_blank" style="color:#fff;"><i class="fa fa-linkedin"></i></a></li>
+
+                  </ul>
+                </div>
+          </div>
+
+      </footer>
+              <div class="wrapper" style="width:100%">
+          <div id="copyright" class="hoc clear" style="color:#fff"> 
+            <div style="text-align:center; margin-left:auto; margin-right:auto;padding-top:10px;">
+                <p class="" >Copyright &copy; 2020 Al-sadaqa | Powered by Al-sadaqa</p>
+              </div>
+          </div>
+
+           
+        </div>
+        </div>
+           
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="layout/scripts/jquery.min.js"></script>
+    <script src="layout/scripts/jquery.backtotop.js"></script>
+    <script src="layout/scripts/jquery.mobilemenu.js"></script>
+    <script src="layout/scripts/jquery.flexslider-min.js"></script>
+      <script>
+    $(document).ready(function(){
+          $(".card1").click(function(){
+            $("#c2").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c5").fadeOut(0);
+            $("#c6").fadeOut(0);
+            $("#c7").fadeOut(0);  
+                          $("#c8").fadeOut(0);    
+
+            $(".card").css("height","200px");
+            $("#card1").css("height","auto");
+            $("#c1").toggle();
+          });
+        
+        
+
+        $(".card2").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c5").fadeOut(0);
+            $("#c6").fadeOut(0); 
+            $("#c7").fadeOut(0); 
+                        $("#c8").fadeOut(0);    
+
+            $(".card").css("height","200px");
+            $("#card2").css("height","auto");
+            $("#c2").toggle();
+          }); 
+        
+        
+        
+         $(".card3").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c2").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c5").fadeOut(0);
+            $("#c6").fadeOut(0); 
+            $("#c7").fadeOut(0); 
+                         $("#c8").fadeOut(0);    
+
+            $(".card").css("height","200px");
+            $("#card3").css("height","auto");
+            $("#c3").toggle();
+          });
+        
+        
+        
+         $(".card4").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c2").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c5").fadeOut(0);
+            $("#c6").fadeOut(0);  
+            $("#c7").fadeOut(0);  
+                         $("#c8").fadeOut(0);    
+
+            $(".card").css("height","200px");
+            $("#card4").css("height","auto");
+            $("#c4").toggle();
+          }); 
+        
+         $(".card5").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c2").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c6").fadeOut(0);  
+            $("#c7").fadeOut(0); 
+                         $("#c8").fadeOut(0);    
+
+            $(".card").css("height","200px");
+            $("#card5").css("height","auto");
+            $("#c5").toggle();
+          }); 
+           $(".card6").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c2").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c5").fadeOut(0); 
+            $("#c7").fadeOut(0); 
+                           $("#c8").fadeOut(0);    
+
+            $(".card").css("height","200px");
+            $("#card6").css("height","auto");
+            $("#c6").toggle();
+          }); 
+        
+          $(".card7").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c2").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c5").fadeOut(0);
+            $("#c6").fadeOut(0); 
+            $("#c8").fadeOut(0);    
+            $(".card").css("height","200px");
+            $("#card7").css("height","auto");
+            $("#c7").toggle();
+          }); 
+         $(".card8").click(function(){
+            $("#c1").fadeOut(0);
+            $("#c2").fadeOut(0);
+            $("#c3").fadeOut(0);
+            $("#c4").fadeOut(0);
+            $("#c5").fadeOut(0);
+            $("#c6").fadeOut(0); 
+            $("#c7").fadeOut(0);    
+            $(".card").css("height","200px");
+            $("#card8").css("height","auto");
+            $("#c8").toggle();
+          }); 
+    
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#search-menu").removeClass("toggled");
+
+            $("#search-icon").click(function (e) {
+                e.stopPropagation();
+                $("#search-menu").toggleClass("toggled");
+                $("#popup-search").focus();
+            });
+
+            $("#search-menu input").click(function (e) {
+                e.stopPropagation();
+            });
+
+            $("#search-menu, body").click(function () {
+                $("#search-menu").removeClass("toggled");
+            });
+        });
+
+                $("#back-to-top").click(function () {
+                $("html, body").animate({scrollTop: 0}, 1000);
+                });
+    </script>
+         <script src="layout/scripts/cards.js"></script>
+        
+    </body>
+</html>
